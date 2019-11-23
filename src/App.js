@@ -3,6 +3,8 @@ import './App.css';
 import SimpleSlider from './SimpleSlider'
 import BarChart from "./Charts/BarChart";
 import LineChart from "./Charts/LineChart";
+import DoughnutChart from "./Charts/DoughnutChart";
+import './Charts/Chart.css';
 
 
 class App extends React.Component {
@@ -80,18 +82,32 @@ class App extends React.Component {
 
         return (
             <div className="App">
-                <div>
+                <div className="main chart-wrapper">
                     <LineChart
                         data={this.state.data[0].data}
                         title={this.state.data[0].title}
                         color="#70CAD1"
                     />
                 </div>
-                <div>
+                <div className="sub chart-wrapper">
                     <BarChart
                         data={this.state.data[1].data}
                         title={this.state.data[1].title}
                         color="#70CAD1"
+                    />
+                </div>
+              <div className="sub chart-wrapper">
+                <BarChart
+                    data={this.state.data[2].data}
+                    title={this.state.data[2].title}
+                    color="#B08EA2"
+                />
+              </div>
+                <div className="sub chart-wrapper">
+                    <DoughnutChart
+                        data={this.state.data[3].data}
+                        title={this.state.data[3].title}
+                        colors={['#a8e0ff', '#8ee3f5', '#70cad1', '#3e517a', '#b08ea2', '#BBB6DF']}
                     />
                 </div>
             </div>
